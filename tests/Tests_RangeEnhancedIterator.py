@@ -1,11 +1,4 @@
-
-# coding: utf-8
-
-# In[ ]:
-
-
 import unittest
-import RangeEnhancedIterator_Generator
 from RangeEnhancedIterator_Generator import IteratorEnhancedRange
 
 
