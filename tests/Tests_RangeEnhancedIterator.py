@@ -3,9 +3,6 @@ from RangeEnhancedIterator_Generator import IteratorEnhancedRange
 
 
 class IteratorTests(unittest.TestCase):
-
-    def setUp(self):
-        print ('Setup called')
     
     def test_on_range_w_one_arg(self):
         example = IteratorEnhancedRange(2)
@@ -26,9 +23,6 @@ class IteratorTests(unittest.TestCase):
         self.assertEqual(next(example), 4)
         self.assertEqual(next(example), 6)
         self.assertRaises(StopIteration, next, example)
-
-    def tearDown(self):
-        print ('Tear down called')
 
 
 if __name__ == '__main__':
