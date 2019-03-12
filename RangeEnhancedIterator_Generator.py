@@ -14,7 +14,7 @@ class IteratorEnhancedRange:
             self.start = self.args[0]
             self.end = self.args[1]
             self.step = 1
-        elif len (args) == 3:
+        elif len(args) == 3:
             if self.args[2] == 0:
                 raise Exception("Unable to range with step = 0")
             self.start = self.args[0]
@@ -28,14 +28,14 @@ class IteratorEnhancedRange:
         return self
     
     def __next__(self):
-        if (self.step/abs(self.step))*self.start >= (self.step/abs(self.step))*self.end:
+        if (self.step / abs(self.step)) * self.start >= (self.step / abs(self.step)) * self.end:
             raise StopIteration
         else:
             if self.startediter is False:
                 self.startediter = True
                 return self.start
             else:
-                if (self.step/abs(self.step))*(self.start + self.step) >= (self.step/abs(self.step))*self.end:
+                if (self.step / abs(self.step)) * (self.start + self.step) >= (self.step / abs(self.step)) * self.end:
                     raise StopIteration
                 else:
                     self.start += self.step
@@ -61,7 +61,7 @@ class GeneratorEnhancedRange:
             self.start = self.args[0] - 1
             self.end = self.args[1]
             self.step = 1
-        elif len (args) == 3:
+        elif len(args) == 3:
             if self.args[2] == 0:
                 raise Exception("Unable to range with step = 0")
             self.start = self.args[0] - self.args[2]
@@ -75,7 +75,7 @@ class GeneratorEnhancedRange:
         return GeneratorEnhancedRange.gener(self)
     
     def gener(self):
-        while (self.step/abs(self.step))*(self.start + self.step) < (self.step/abs(self.step))*self.end:
+        while (self.step / abs(self.step)) * (self.start + self.step) < (self.step / abs(self.step)) * self.end:
             self.start += self.step
             yield self.start
     
